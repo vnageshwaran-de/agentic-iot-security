@@ -68,7 +68,7 @@ The default `--model stub` backend implements deterministic responses so the har
 | Pillar I — Agent architecture | `core_loops/react_agent.py`, `core_loops/multi_agent.py` |
 | Pillar II — Reasoning strategy | ReAct loop in `react_agent.py`; reflection helpers in `utils.py` |
 | Pillar III — Action scope | `prompts/*.md`, `prompts/tool_schemas.json` |
-| Pillar IV — Deployment topology | `--topology edge|fog|cloud` flag toggles model size and tool-set in `benchmark.py` |
+| Pillar IV — Deployment topology | `--topology edge\|fog\|cloud` flag toggles model size and tool-set in `benchmark.py` |
 
 ## License
 

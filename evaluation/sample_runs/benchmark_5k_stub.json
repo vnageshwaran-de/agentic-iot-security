@@ -1,0 +1,20 @@
+{
+  "rows": 5000,
+  "accuracy": 0.7834,
+  "per_family_recall": {
+    "benign": 0.9413,
+    "mqtt-mitm": 0.1593,
+    "injection": 0.1131,
+    "recon": 0.2418,
+    "brute-force": 1.0,
+    "ddos": 1.0,
+    "exfil": 0.3957
+  },
+  "latency_s": {
+    "p50": 0.0,
+    "p95": 0.0,
+    "p99": 0.0
+  },
+  "topology": "edge",
+  "model": "stub"
+}

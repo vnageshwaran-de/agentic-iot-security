@@ -77,3 +77,13 @@ MIT. See `LICENSE`.
 ## Citation
 
 If you build on this repository, please cite the companion survey (full BibTeX entry in the manuscript references).
+
+---
+
+## What's new in v0.2.0
+
+- **`evaluation/probes/PROVENANCE.md`** — full provenance map for the 25 prompt-injection probes (12 CyberSecEval 3, 6 Greshake et al. ACM AISec 2023, 7 author-generated IoT-specific).
+- **`core_loops/multi_agent/` is now a package**, with `sanitize.py` shipping the two-stage syntactic + semantic inter-agent input filter described in §10.3 of the manuscript.
+- **`evaluation/sample_runs/`** — reproducible outputs from the deterministic stub mode that back the validation numbers cited in §10.3 (binary F1 = 0.83, multi-class macro F1 = 0.54, sub-microsecond stub latency on a 5,000-row run).
+- **`PROMPT_INJECTION_PROBES`** in `core_loops/utils.py` expanded from 5 to 25 entries to match the provenance map.
+

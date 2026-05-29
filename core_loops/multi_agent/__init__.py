@@ -17,7 +17,7 @@ import time
 from dataclasses import dataclass, field
 from typing import Callable
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
 from core_loops.utils import LLMClient, make_llm, Trace, looks_like_injection
@@ -105,3 +105,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+from core_loops.multi_agent.sanitize import sanitize_handoff, SyntacticFilter, SemanticFrame  # noqa: E402

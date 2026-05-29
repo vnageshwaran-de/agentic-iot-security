@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Harness outputs
+benchmark_run.json
+benchmark_run.csv
+adversarial_run.json
+*.log
+
+# Data — never check raw datasets in
+data/*
+!data/.gitkeep

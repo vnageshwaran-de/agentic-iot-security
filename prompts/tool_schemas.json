@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgenticIoTSecurityTools",
+  "description": "Canonical tool schemas used across the prompts in this repository. Each entry is a function-calling object compatible with OpenAI/Anthropic tool-use conventions.",
+  "tools": [
+    {
+      "name": "siem_query",
+      "description": "Issue a SPL-like query against the SIEM and receive matching events.",
+      "parameters": {
+        "type": "object",
+        "required": ["query", "time_range"],
+        "properties": {
+          "query": {"type": "string"},
+          "time_range": {"type": "string", "pattern": "^[0-9]+[smhd]$"},
+          "max_rows": {"type": "integer", "default": 100}
+        }
+      }
+    },
+    {
+      "name": "attack_lookup",
+      "description": "Resolve a MITRE ATT&CK technique ID to its full description and detection guidance.",
+      "parameters": {
+        "type": "object",
+        "required": ["technique_id"],
+        "properties": {
+          "technique_id": {"type": "string", "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"}
+        }
+      }
+    },
+    {
+      "name": "device_inventory",
+      "description": "Look up an asset by IP or MAC and return device class, criticality tier, and patch status.",
+      "parameters": {
+        "type": "object",
+        "required": ["identifier"],
+        "properties": {"identifier": {"type": "string"}}
+      }
+    },
+    {
+      "name": "pcap_sandbox",
+      "description": "Run a small packet capture filter against a recorded session in a sandbox.",
+      "parameters": {
+        "type": "object",
+        "required": ["filter", "session_id"],
+        "properties": {
+          "filter": {"type": "string"},
+          "session_id": {"type": "string"},
+          "max_packets": {"type": "integer", "default": 1000}
+        }
+      }
+    },
+    {
+      "name": "cti_feed",
+      "description": "Search threat intelligence feeds for indicators related to a hash, domain, or IP.",
+      "parameters": {
+        "type": "object",
+        "required": ["indicator"],
+        "properties": {"indicator": {"type": "string"}, "feed": {"type": "string", "default": "internal"}}
+      }
+    },
+    {
+      "name": "rate_limit",
+      "description": "Apply a packets-per-second cap to a given source IP for a bounded TTL.",
+      "parameters": {
+        "type": "object",
+        "required": ["asset", "rate_pps", "ttl_seconds"],
+        "properties": {
+          "asset": {"type": "string"},
+          "rate_pps": {"type": "integer", "minimum": 1, "maximum": 10000},
+          "ttl_seconds": {"type": "integer", "minimum": 30, "maximum": 86400}
+        }
+      }
+    },
+    {
+      "name": "block_ip",
+      "description": "Drop traffic from a source IP. Requires confirmation for life-critical assets.",
+      "parameters": {
+        "type": "object",
+        "required": ["ip", "ttl_seconds"],
+        "properties": {
+          "ip": {"type": "string"},
+          "ttl_seconds": {"type": "integer", "minimum": 60, "maximum": 86400},
+          "confirm_human": {"type": "boolean", "default": false}
+        }
+      }
+    },
+    {
+      "name": "quarantine_device",
+      "description": "Move a device to a quarantine VLAN. MUST require human approval for tier <=2 devices.",
+      "parameters": {
+        "type": "object",
+        "required": ["device_id"],
+        "properties": {"device_id": {"type": "string"}, "approver": {"type": "string"}}
+      }
+    },
+    {
+      "name": "static_analyzer",
+      "description": "Run a lightweight static-analysis pass on a firmware file or source tree.",
+      "parameters": {
+        "type": "object",
+        "required": ["artifact_uri"],
+        "properties": {"artifact_uri": {"type": "string"}, "ruleset": {"type": "string", "default": "iot-default"}}
+      }
+    },
+    {
+      "name": "taint_tracer",
+      "description": "Trace data flow from a source expression to a sink expression in a firmware artifact.",
+      "parameters": {
+        "type": "object",
+        "required": ["artifact_uri", "source", "sink"],
+        "properties": {
+          "artifact_uri": {"type": "string"},
+          "source": {"type": "string"},
+          "sink": {"type": "string"}
+        }
+      }
+    },
+    {
+      "name": "protocol_fuzzer",
+      "description": "Send fuzzed protocol inputs to a sandboxed target and report crashes/anomalies.",
+      "parameters": {
+        "type": "object",
+        "required": ["target", "protocol"],
+        "properties": {
+          "target": {"type": "string"},
+          "protocol": {"type": "string", "enum": ["mqtt", "coap", "modbus", "http"]},
+          "duration_seconds": {"type": "integer", "default": 60, "maximum": 600}
+        }
+      }
+    },
+    {
+      "name": "cve_lookup",
+      "description": "Search NVD for CVEs matching a vendor, product, and version.",
+      "parameters": {
+        "type": "object",
+        "required": ["product"],
+        "properties": {
+          "vendor": {"type": "string"},
+          "product": {"type": "string"},
+          "version": {"type": "string"}
+        }
+      }
+    }
+  ]
+}

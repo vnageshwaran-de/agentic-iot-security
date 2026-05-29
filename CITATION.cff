@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the companion survey."
+title: "Agentic IoT Security Lab"
+abstract: "Companion reproducibility kit for the systematic survey 'Agentic AI and Large Language Models for Autonomous IoT Cybersecurity' (Electronics 2026)."
+authors:
+  - family-names: Nageshwaran
+    given-names: Vinoth
+    email: vnageshwaran@gmail.com
+    orcid: "https://orcid.org/0009-0004-0332-231X"
+  - family-names: Ezekiel
+    given-names: Soundararajan
+    email: sezekiel@iup.edu
+repository-code: "https://github.com/vnageshwaran-de/agentic-iot-security"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Agentic AI and Large Language Models for Autonomous IoT Cybersecurity: A Systematic Survey, Taxonomy, and Research Roadmap"
+  authors:
+    - family-names: Nageshwaran
+      given-names: Vinoth
+    - family-names: Ezekiel
+      given-names: Soundararajan
+  journal: "Electronics"
+  publisher:
+    name: MDPI
+  year: 2026

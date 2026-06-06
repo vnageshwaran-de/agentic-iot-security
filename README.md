@@ -87,3 +87,8 @@ If you build on this repository, please cite the companion survey (full BibTeX e
 - **`evaluation/sample_runs/`** — reproducible outputs from the deterministic stub mode that back the validation numbers cited in §10.3 (binary F1 = 0.83, multi-class macro F1 = 0.54, sub-microsecond stub latency on a 5,000-row run).
 - **`PROMPT_INJECTION_PROBES`** in `core_loops/utils.py` expanded from 5 to 25 entries to match the provenance map.
 
+## What's new since v0.2.0 (Round-1 revision alignment)
+
+- **`corpus/`** — new directory shipping the PRISMA corpus materials referenced in §§3.4–3.5 and 10 of the manuscript: the coded extraction matrix (`extraction_matrix.csv`) and the search-strategy / screening documentation (`search_strategy.md`). The matrix currently contains the rows backing the revised manuscript's quantified counts (compound failure modes: 5 of 153, §8.2; false-discovery-rate reporting: 2 of 13, §5.3.4); remaining rows are being populated from the screening records — see `corpus/README.md`.
+- **Stub-run docs updated** — the sanity-check run description moved from §10.3 to Appendix A in the revised manuscript; `evaluation/sample_runs/README.md` now states explicitly that stub figures validate harness functionality only (no language model involved).
+

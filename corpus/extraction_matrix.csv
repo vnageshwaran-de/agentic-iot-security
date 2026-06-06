@@ -1,0 +1,8 @@
+study_id,title,first_author,venue,year,iot_layer,topology,agent_architecture,reasoning_strategy,cybersecurity_focus,benchmarks,critical_limitations,compound_failure_mode,reports_false_discovery_rate
+ref-1,BARTPredict: Empowering IoT Security with LLM-Driven Cyber Threat Prediction,Diaf,IEEE GLOBECOM,2024,network,edge,single-agent,none,detection,BoT-IoT ~98% accuracy,dataset-bias;hallucination,error-propagation,
+ref-2,Agentic AI Security: Threats Defenses Evaluation and Open Challenges,Chhabra,IEEE Access,2025,application,cross,multi-agent,react,detection,survey/evaluation,adversarial-fragility,error-propagation,
+ref-6,Advanced Smart Contract Vulnerability Detection via LLM-Powered Multi-Agent Systems,Sun,IEEE TSE,2025,application,cloud,multi-agent,tool-use,vulnerability-discovery,smart-contract benchmarks,hallucination,error-propagation,no
+ref-60,TODO-title,TODO,TODO,TODO,application,cross,multi-agent,react,detection,TODO,adversarial-fragility,tool-use-amplification,
+ref-142,LogRESP-Agent,TODO,TODO,TODO,network,cloud,multi-agent,react,threat-hunting,TODO,latency,tool-use-amplification,
+ref-89,TODO-title (reports non-reproducing finding rates),TODO,TODO,TODO,application,cloud,single-agent,tool-use,vulnerability-discovery,TODO,hallucination,,yes
+ref-92,TODO-title (reports non-reproducing finding rates),TODO,TODO,TODO,application,cloud,single-agent,tool-use,vulnerability-discovery,TODO,hallucination,,yes

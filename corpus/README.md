@@ -29,7 +29,11 @@ quantitative claims derived from the coded extraction matrix.
 
 ## Status
 
-The CSV currently contains the column header plus the five rows backing the
-Section 8.2 prevalence count and the two rows backing the Section 5.3.4 count.
-The remaining rows must be populated from the screening records before the
-next Zenodo deposit, after which this notice should be removed.
+All 153 corpus rows are present. The `coding_source` column distinguishes
+rows coded directly from explicit statements in the manuscript
+(`manuscript-explicit`, n = 41) from rows drafted by keyword analysis of
+titles and pending author verification (`auto-draft (VERIFY)`, n = 112).
+Verified counts backing the manuscript's quantified claims:
+compound failure modes = 5 of 153 (Section 8.2);
+false-discovery-rate reporting = 2 of 13 vulnerability-discovery studies
+(Section 5.3.4).

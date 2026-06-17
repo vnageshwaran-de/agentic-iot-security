@@ -14,7 +14,14 @@ repository-code: "https://github.com/vnageshwaran-de/agentic-iot-security"
 license: MIT
 version: 0.3.0
 date-released: 2026-06-17
-doi: 10.5281/zenodo.20438072
+doi: 10.5281/zenodo.20726552
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.20726552
+    description: "Version DOI for release v0.3.0"
+  - type: doi
+    value: 10.5281/zenodo.20438072
+    description: "Concept DOI (always resolves to the latest version)"
 preferred-citation:
   type: article
   title: "Agentic AI and Large Language Models for Autonomous IoT Cybersecurity: A Systematic Survey, Taxonomy, and Research Roadmap"

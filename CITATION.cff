@@ -12,6 +12,9 @@ authors:
     email: sezekiel@iup.edu
 repository-code: "https://github.com/vnageshwaran-de/agentic-iot-security"
 license: MIT
+version: 0.3.0
+date-released: 2026-06-17
+doi: 10.5281/zenodo.20438072
 preferred-citation:
   type: article
   title: "Agentic AI and Large Language Models for Autonomous IoT Cybersecurity: A Systematic Survey, Taxonomy, and Research Roadmap"

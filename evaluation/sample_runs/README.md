@@ -13,6 +13,7 @@ in the Round-1 revision).
 |------|---------|-------|
 | `benchmark_5k_stub.csv` / `.json` | `python evaluation/benchmark.py --rows 5000 --out-prefix evaluation/sample_runs/benchmark_5k_stub` | 5,000 synthetic Edge-IIoTset-style rows; `--model stub` (no API key required); seed fixed in `evaluation/datasets.py`. |
 | `adversarial_25probes.json` | `python evaluation/adversarial.py --probes 25 --out evaluation/sample_runs/adversarial_25probes.json` | 25 prompt-injection probes (provenance in `../probes/PROVENANCE.md`); reports flip rate and pre-action detection rate. |
+| `edge_iiotset_real_step_i.csv` / `.json` | `python evaluation/edge_iiotset_adapter.py --per-class 2500 --out data/edge_iiotset.csv` then `python evaluation/benchmark.py --rows 2481 --model stub` | **Section 10.3 Step (i) — real data.** Official Edge-IIoTset mapped into the loader schema by `evaluation/edge_iiotset_adapter.py`. Stub-harness accuracy = **0.062** on 2,481 real flows vs **0.783** on the synthetic generator. Reported as a *negative control* quantifying the synthetic-to-real gap, **not** a detection result: payload entropy is unavailable in the public release (all payload fields zeroed), which deactivates the entropy-dependent heuristic branches. Real detection numbers require a model backend (Steps iii–iv). |
 
 ## Summary statistics (computed from `benchmark_5k_stub.csv`)
 

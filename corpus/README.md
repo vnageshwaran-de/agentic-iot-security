@@ -9,6 +9,7 @@ quantitative claims derived from the coded extraction matrix.
 |---|---|
 | `extraction_matrix.csv` | The full coded matrix: one row per included study (n = 153), coded along the seven dimensions of the extraction schema (manuscript Section 3.5). |
 | `search_strategy.md` | Search strings, venue list, date window, inclusion/exclusion criteria, and exclusion rationale (manuscript Sections 3.2–3.4). |
+| `codebook.md` | Closed category definitions, primary-function decision rules, and tie-breaking conventions used to code the matrix (manuscript Sections 3.4–3.5 and 5). |
 
 ## Columns of `extraction_matrix.csv`
 
@@ -29,11 +30,11 @@ quantitative claims derived from the coded extraction matrix.
 
 ## Status
 
-All 153 corpus rows are present. The `coding_source` column distinguishes
-rows coded directly from explicit statements in the manuscript
-(`manuscript-explicit`, n = 41) from rows drafted by keyword analysis of
-titles and pending author verification (`auto-draft (VERIFY)`, n = 112).
-Verified counts backing the manuscript's quantified claims:
-compound failure modes = 5 of 153 (Section 8.2);
-false-discovery-rate reporting = 2 of 13 vulnerability-discovery studies
-(Section 5.3.4).
+All 153 corpus rows are present and verified. The `coding_source` column records
+provenance: `manuscript-explicit` (n = 41) for rows coded directly from explicit
+statements in the primary study / manuscript, and `author-verified` (n = 112) for
+rows that were initially auto-drafted by keyword analysis and have since been
+checked against the primary study and confirmed or corrected by the author. No
+rows remain pending verification. Counts backing the manuscript's quantified
+claims: compound failure modes = 5 of 153 (Section 8.2); false-discovery-rate
+reporting = 2 of 13 vulnerability-discovery studies (Section 5.3.4).
